@@ -53,7 +53,9 @@ public class Server implements Runnable{
     }
 
     public void disconnect(ClientHandler client){
-
+        for (ChatHandler c:client.chats) {
+            c.leave(client);
+        }
     }
     public void newChat(String name, ClientHandler client){
         ChatHandler chat = new ChatHandler(this, chats.size(), name, client);

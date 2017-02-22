@@ -171,7 +171,7 @@ public class Client extends JFrame implements ActionListener, Runnable{
                 p = (Packet) oin.readObject();
                 handlePacket(p);
             } catch (IOException e) {
-                System.out.println("Client Disconnected from Server...");
+                System.out.println("Trying to reconnect to a Server...");
                 break;
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();

@@ -23,9 +23,15 @@ public class ChatHandler {
     public void join(ClientHandler c){
         clients.add(c);
         c.join(this);
+        Packet p = new Packet(c.getName() + " has Joined", "", id, true);
+        send(p);
     }
     public void leave(ClientHandler c){
-        clients.remove(clients.indexOf(c));
+        if(clients.indexOf(c) > 0) {
+            clients.remove(clients.indexOf(c));
+            Packet p = new Packet(c.getName() + " has been disconnected...", "", id, true);
+            send(p);
+        }
     }
 
 
