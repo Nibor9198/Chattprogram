@@ -5,8 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * This class comesfrom http://www.java2s.com/Code/Java/Swing-Components/ButtonTableExample.htm
- * It is not of my making.
+ * This class comes from http://www.java2s.com/Code/Java/Swing-Components/ButtonTableExample.htm
+ * It is not of my making, I have just made some minor adjustments.
+ *
+ *
  */
 
 
@@ -104,4 +106,3 @@ import java.awt.event.ActionListener;
         }
     }
 
-//http://www.java2s.com/Code/Java/Swing-Components/ButtonTableExample.htm

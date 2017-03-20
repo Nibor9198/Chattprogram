@@ -20,10 +20,10 @@ public class ServerList extends JFrame implements ActionListener{
             string += "\n" + c.toString() ;
         }
 
-        System.out.println(string);
-        //string = "Whatup Alfred 23 \nSassy Edvin 42 ";
 
-
+        //Debug
+        //System.out.println(string);
+        //string = "Whatup Alfred  23\nSassy Edvin 42 ";
 
 
         this.client = client;

@@ -9,6 +9,9 @@ import java.io.IOException;
 
 /**
  * Created by robin.boregrim on 2016-12-12.
+ *
+ * Type: Client
+ * This is the Chatroom from the Client's perspective.
  */
 public class Chat extends JPanel implements ActionListener{
 
@@ -147,7 +150,7 @@ public class Chat extends JPanel implements ActionListener{
         client.send(p);
     }
     public void handlePacket(Packet p){
-        ta.append(p.getSender() + ": " + p.getText() + "\n");
+        ta.append(" " + p.getSender() + ": " + p.getText() + "\n");
     }
 
     public int getId() {

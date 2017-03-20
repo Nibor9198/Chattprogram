@@ -31,10 +31,11 @@ public class Client extends JFrame implements ActionListener, Runnable{
     ArrayList<Chat> chats;
     public Client(){
         chats = new ArrayList<>();
-
+        //If a name is not given it is by default "Anonymous"
         name = "Anonymous";
+        
         String temp = JOptionPane.showInputDialog("What is your name?");
-        if(temp != null) name = temp;
+        if(temp != null && temp != "") name = temp;
 
         //Set Title
         setTitle(name);
@@ -107,10 +108,15 @@ public class Client extends JFrame implements ActionListener, Runnable{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == newChat){
             String s = JOptionPane.showInputDialog("Enter a name for the server");
-            if(!s.equals(null)) {
+            try {
+                s.equals(null);
+            }catch (java.lang.NullPointerException e2){
+                s = name + "'s Server";
+            }
+            //if(!s.equals(null)) {
                 Packet p = new Packet("newChat " + s, name, 0, false);
                 send(p);
-            }
+            //}
         }
         if(e.getSource() == joinChat){
             System.out.println("join");
@@ -121,7 +127,7 @@ public class Client extends JFrame implements ActionListener, Runnable{
 
     public void send(Packet p){
         try {
-            System.out.println("send " + p.getText());
+            //System.out.println("send " + p.getText());
             oout.writeObject(p);
         } catch (IOException e) {
             e.printStackTrace();
@@ -136,7 +142,7 @@ public class Client extends JFrame implements ActionListener, Runnable{
             }
 
         } else{
-            System.out.println(p.getText());
+            //System.out.println(p.getText());
             if (p.getText().equals("join")){
 
                 try {
