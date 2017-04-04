@@ -72,8 +72,6 @@ public class ServerList extends JFrame implements ActionListener{
         setSize(200,200);
 
 
-        //FORSTÄTT
-
         //http://docs.oracle.com/javase/tutorial/uiswing/components/table.html
     }
 

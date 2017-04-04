@@ -89,7 +89,7 @@ public class ClientHandler implements Runnable{
 
         }else {
             if(testPacketText(p, "newChat")) {
-                System.out.println(p.getText().substring(p.getText().indexOf(" ")+1));
+                //System.out.println(p.getText().substring(p.getText().indexOf(" ")+1));
                 server.newChat(p.getText().substring(p.getText().indexOf(" ")+1), this);
             }
             else if(p.getText().equals("joinChat"))

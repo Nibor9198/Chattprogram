@@ -46,7 +46,6 @@ public class Server implements Runnable{
     @Override
     public void run() {
 
-        while(true){
             try {
                 //Wait for a client to connect
                 Socket so  = ss.accept();
@@ -58,7 +57,6 @@ public class Server implements Runnable{
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
 
     }
 
